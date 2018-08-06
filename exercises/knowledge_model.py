@@ -6,12 +6,18 @@ from sqlalchemy import create_engine
 Base = declarative_base()
 
 class Knowledge(Base):
-	# Create a table with 4 columns
-	# The first column will be the primary key
-	# The second column should be a string representing
-	# the name of the Wiki article that you're referencing
-	# The third column will be a string representing the 
-	# topic of the article. The last column will be
-	# an integer, representing your rating of the article.
+	__tablename__="person"
+	person_id=Column(Integer,primary_key=True)e
+	name=Column(String)
+	fav_color=Column(String)
+	fav_animal=Column(String)
 
-	pass
+	def__repr__(self):
+		return ("name:{}\n"
+				"favorite_color:{}\n"
+				"favorite_animal:{}\n").format(
+					self.name,
+					self.fav_color,
+					self.fav_animal)
+
+
