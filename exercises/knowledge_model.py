@@ -6,18 +6,16 @@ from sqlalchemy import create_engine
 Base = declarative_base()
 
 class Knowledge(Base):
-	__tablename__="person"
-	person_id=Column(Integer,primary_key=True)e
-	name=Column(String)
-	fav_color=Column(String)
-	fav_animal=Column(String)
+	__tablename__= "article"
+	article_id=Column(Integer,primary_key=True)
+	topic=Column(String)
+	title=Column(String)
+	rating=Column(Integer)
 
-	def__repr__(self):
-		return ("name:{}\n"
-				"favorite_color:{}\n"
-				"favorite_animal:{}\n").format(
-					self.name,
-					self.fav_color,
-					self.fav_animal)
+	def __repr__(self):
+		return ("if you want to learn about {},""you should look at the wiki articleb called {}"" We gave this article a rating of {} out of 10!").format(
+					self.topic,
+					self.title,
+					self.rating)
 
 
